@@ -5,7 +5,7 @@ Regex Crossword Solver
 
 A regex crossword solver written in Go. Regex crosswords are puzzles like the ones on [regexcrossword.com](http://regexcrossword.com/). It's completely just for fun and learning.
 
-For a full explanation of what's going on, read the [blog post](http://herman.asia/solving-regex-crosswords-with-go).
+For a full explanation of what's going on, read the [blog post](http://herman.asia/solving-regex-crosswords-using-go).
 
 Does not yet:
  - support four-sided puzzles
