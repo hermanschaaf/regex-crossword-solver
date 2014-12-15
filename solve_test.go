@@ -3,7 +3,7 @@ package crossword
 import "testing"
 
 func TestSatisfiesAtPos(t *testing.T) {
-	cases := []struct {
+	for _, tt := range []struct {
 		name string
 		expr string
 		r    rune
@@ -40,8 +40,7 @@ func TestSatisfiesAtPos(t *testing.T) {
 		{".?.+: '*' at 0", `.?.+`, '*', 0, true},
 		{".?.+: '/' at 1", `.?.+`, '/', 1, true},
 		{"[BORF].: 'L' at 1", `[BORF].`, 'L', 1, true},
-	}
-	for _, tt := range cases {
+	} {
 		got := satisfiesAtPos(tt.expr, tt.r, tt.pos)
 		if got != tt.want {
 			t.Errorf("%q case: got %t, want %t", tt.name, got, tt.want)
@@ -50,7 +49,7 @@ func TestSatisfiesAtPos(t *testing.T) {
 }
 
 func TestSolve(t *testing.T) {
-	cases := []struct {
+	for _, tt := range []struct {
 		name string
 		rows []string
 		cols []string
@@ -134,8 +133,7 @@ func TestSolve(t *testing.T) {
 			cols: []string{`.*E.*`, `[^P]I(IT|ME)`, `(EM|FE)(IT|IP)`, `(TS|PE|KE)*`},
 			want: "STEPTIMEEMITPETS",
 		},
-	}
-	for _, tt := range cases {
+	} {
 		got, err := Solve(tt.rows, tt.cols)
 		if err != nil {
 			t.Errorf("%q case error: %v", tt.name, err)

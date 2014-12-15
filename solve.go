@@ -85,6 +85,7 @@ func compileRegex(expr []string) ([]*regexp.Regexp, error) {
 	return res, nil
 }
 
+// Solve solves the given crossword.
 func Solve(rows, cols []string) (string, error) {
 	rowRe, err := compileRegex(rows)
 	if err != nil {
